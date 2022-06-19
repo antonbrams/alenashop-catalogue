@@ -232,7 +232,6 @@
 			e.preventDefault()
 			var [root] = e.dataTransfer.items
 			const file_tree = await traverse(root.webkitGetAsEntry())
-			console.log(file_tree)
 			build_catalog(file_tree)
 		})
 
