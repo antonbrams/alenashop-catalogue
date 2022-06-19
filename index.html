@@ -1,3 +1,5 @@
+<!-- https://antonbrams.io/alenashop-catalogue/ -->
+
 <html>
 	<meta charset="UTF-8" />
 	<head>
@@ -14,6 +16,7 @@
 			font-family: Helvetica, Arial;
 			justify-content: center;
 			height: 100%;
+			box-sizing: border-box;
 		}
 
 		.banner {
@@ -131,6 +134,7 @@
 		<h2 class="banner">Перетащите папку с фотографиями сюда...</h2>
 	</body>
 	<script>
+		
 		// BUILD CATALOG
 		const load_image = file =>
 			new Promise(resolve => {
@@ -193,9 +197,8 @@
 		}
 
 		// DRAG AND DROP
-		document.body.ondragover = document.body.ondragenter = e => {
-			e.preventDefault()
-		}
+		document.body.ondragover = e => e.preventDefault()
+		document.body.ondragenter = e => e.preventDefault()
 
 		const get_file_tree = async folder => {
 			return await traverse()
